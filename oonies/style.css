@@ -1,0 +1,932 @@
+/* ----- сброс ----- 24navo.com*/
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, strong, sub, sup, b, u, i,  dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;                               /* обнуляем отступы и убираем бордюры */
+	vertical-align: baseline;          /* приводим все к одной базовой линии */
+	background: transparent;      /* чтобы не проскакивали левые фоны,             установленные по умолчанию */
+	font-size: 100%;                     /* размер шрифта всем одинаковый */
+}
+a {                                      	     /* ссылка не в общем списке чтобы не сбрасывать outline по умолчанию */
+	margin:0;
+	padding:0;
+	font-size:100%;
+	vertical-align:baseline;
+	background:transparent;
+	outline:none;
+}
+table {						/* устраняем отступы между ячейками таблицы */
+	border-collapse: collapse; 
+	border-spacing: 0;
+}
+td, td img {
+	vertical-align: top;			/* возвращаем привычное вертикальное выравнивание */
+} 
+input, select, button, textarea {
+	margin: 0; 				/* убираем отступы по умолчанию для элементов форм (в частности для checkbox и radio) */
+	font-size: 100%; 			/* делаем размер шрифтов везде одинаковым */
+	outline: none;
+}
+input[type="password"], textarea {
+	padding: 0; 				/* убираем внутренние отступы для текстовых полей */
+}
+input[type="checkbox"] { 		/* вертикальное выравнивание чекбоксов и радиобатонов относительно меток */
+	vertical-align: bottom;
+}
+input[type="radio"] {
+	vertical-align: text-bottom;
+}
+sub {
+	vertical-align: sub;
+	font-size: smaller;
+}
+sup {
+	vertical-align: super;
+	font-size: smaller;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display:block;
+}
+nav ul {
+	 list-style:none;
+}
+/* ----- /сброс ----- */
+
+/* ----- базовые настройки ----- 24navo.com*/
+html {
+	min-height:100%; /* всегда показываем вертикальную полосу прокрутки  */
+}
+body {
+	text-align: left;
+	font-size: 1em; /* используем безопасные шрифтовые CSS стеки */
+	min-height:100%;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+a, a:visited { /* порядок правил для ссылок имеет значение */
+	text-decoration: underline;
+}
+a:hover {
+	color: #00a8ff;
+	text-decoration:none;
+}
+a:focus, a:active {
+	color: #00a8ff;
+	text-decoration: underline;
+}
+h1, h2, h3, h4, h5, h6{
+	font-weight:normal;
+}
+img{
+
+	max-width:100%;
+}
+.clr{
+	clear:both;
+}
+.clearfix:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+lii{
+    list-style-image: url(images/galochka.png);
+}
+
+/* ----- /базовые настройки ----- 
+
+#333333 - темный (заглавия)
+#828282 - средний (основной текст, активные ссылки у рамок и серого текста, иконки)
+#d3d3d2 - светлый (рамка)
+#00a8ff - синий (ссылки)
+*/
+/*Код стилей для main-top*/
+
+/*     динамика, выполненна на стилях CSS3       <!-----      23.3         ----->   */
+@keyframes swing {
+  15% {
+    transform: translateX(5px);
+  }
+  30% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  65% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.swaying:hover {
+  animation: swing 1.5s ease;
+  animation-iteration-count: 1;
+}
+.three:hover {
+  text-shadow: 1px 1px #298A08, 2px 2px gold, 3px 3px #298A08, 5px 5px #fff;
+  -webkit-transform: translateX(5px);
+  transform: translateY(-5px);
+}
+/*     /динамика, выполненна на стилях CSS3       <!-----    /  23.3         ----->   */
+.head-0{
+	background: rgba(7,7,7,0.3);
+	position: fixed;
+	z-index: 200;
+	width: 100%;
+}
+.main-top{
+	max-width: 100%; margin: 0 auto;
+}
+.header-t{
+	padding: 15px 0 15px 15px;
+}
+.asus-logo{
+	float: left;
+}
+.menu{
+	float: right; margin-top: 15px;
+}
+.menu li{
+	float: left; margin-right: 28px; font-size: 0.875em; text-transform: uppercase; 
+}
+.menu li a{
+	text-decoration: none; color: #fff; font-weight: 700;
+}
+.menu li a:hover{
+	color: #00a8ff; border-bottom: 1px solid #fff;
+	padding-bottom: 3px;
+}
+.active{
+	color: #fff; font-weight: 700; border-bottom: 1px solid #fff;
+	padding-bottom: 3px;
+}
+/*          СЛАЙДЕР            */
+.unslider-nav{  /*перемещение точек навигации*/
+	max-width: 1166px; margin: -5px auto 0 auto; position: relative; top: -20px;
+}
+.slide-cover-1, .slide-cover-2, .slide-cover-3{
+	position: absolute; max-width: 1000px; left: 15%; top: 30%;
+}
+.my-slider ul li{
+	position: relative; border-bottom: 1.25px solid rgb(91, 0, 157); font-size: 0;
+}
+.slide-cover-1 h1, .slide-cover-2 h1, .slide-cover-3 h1{
+	color: #fff; font-size: 50px; margin-bottom: 20px;
+}
+.my-slider ul li p{
+	color: rgb(91, 0, 157); font-size: 50px; left: 100px; top: 250px; background:url(images/form_bg.png); 
+    margin-bottom: 25px; text-align: center; border: 4px solid #111;
+}
+.slide-cover-1 span, .slide-cover-2 span, .slide-cover-3 span{
+	color:#000000;font-size: 48px; margin-top: 5px; display: block; background-color: aliceblue;
+    border: 3px solid black; border-radius: 4px;
+}
+.download-top{
+	color:#ffffff;  border: 4px solid black; padding: 15px 35px; border-radius: 5px;
+	font-weight: 700; font-size: 20px; text-decoration: none; background: red;
+}
+.slide-cover-1 a, .slide-cover-2 a, .slide-cover-3 a{
+	color: #fff;
+}
+a:hover.download-top{
+	color: #00a8ff; border: 4px solid #00a8ff;
+}
+.my-slider ul li img{
+	width: 100%;
+}
+.slide-cover_1{
+    position: absolute; max-width: 1000px; left: 15%; top: 30%; color:#fff;   
+}
+.slide-cover_1 li p span{
+    color:#fff;
+}
+.slide1{
+	background: url(images/slide1.jpg) center top no-repeat; background-size: cover; padding-top: 54.3%;
+}
+.slide2{
+	background: url(images/slide2.jpg) center top no-repeat; background-size: cover; padding-top: 54.3%;
+}
+.slide3{
+	background: url(images/slide3.jpg) center top no-repeat; background-size: cover; padding-top: 54.3%;
+}
+/*          /СЛАЙДЕР            */
+.main-middle-3-all{
+	border-bottom: 2px solid #828282;
+	padding: 30px 0 20px 0;
+}
+.main-middle-3-all h3{
+	color: rgb(91, 0, 157); font-size: 3em; font-weight: 600; text-align: center;
+    text-shadow: 2px 2px 0px #111,
+				-2px -2px 0px #111,
+				-2px 2px 0px #111,
+				2px -2px 0px #111;
+}
+.main-middle-3-all hr, .main-middle-4-section hr{
+	width: 50%; height: 2px; margin: 10px auto;
+	border: 0; background: linear-gradient(to right, rgba(210,167,57,0)0%,rgba(210,167,57,0.7)50%,
+	rgba(210,167,57,0)100%);
+}
+.main-middle-3 article ul li{
+    font-size: 2em; font-weight: 700; margin-bottom: 15px; list-style-image: url(images/galochka.png);
+    margin-left: 4%; position: relative;
+}
+.main-middle-3 article a img{  /*верх*//*права*//*низ*//*лево*/
+	margin: 0 auto 18px auto; display: block; border: 1.25px solid black;
+    box-shadow: 5px 4px 6px  rgba(0,0,0,0.8); 
+}
+.main-middle-3 article a:hover img{
+	opacity: 0.8; border: 2px solid #fff; box-shadow: none; 
+}
+.main-middle-3 article a{
+	font-size: 1.125em; text-transform: uppercase;
+}
+.main-middle-3 article a:hover{
+	color: #fff; text-decoration: none;
+}
+.main-middle-3 article p, .middle-4-material p{
+	text-align: center; font-size: 0.75em; line-height: 1.6; color: #fff
+}
+.golden-text{
+	color: #D2A739; font-size: 1.425em;
+}
+.fmain-middle-3 article{
+	width: 43%; float: left; margin-right: 1.895%; margin-left: 2%;/*374px/1166px=32.07%*/
+}                                                     /*32.07*3=96.21%| (100-96.21%)/2=1.895*/
+.main-middle-3 article:last-child{
+	margin-right: 0;
+	}
+.main-middle-3{
+	margin: 10px auto 0px auto;
+	}
+.blok_kompl{
+    float: right; width: 45%
+}
+/*     СМЫРТФОНЫ - ТОВАРЫ     */
+
+.main-middle-4-section{
+    border-bottom: 2px solid #828282;
+	padding: 10px 0 70px 0;
+    background-color: #4d1e62;
+}
+.main-middle-4-section h3{
+    color: #ffeb00; font-size: 3em; font-weight: 500; text-align: center;
+    text-shadow: 3px 3px 0px #111,
+				-1px -1px 0px #111,
+				-1px 1px 0px #111,
+				1px -1px 0px #111;
+}
+.middle-4-article article{
+    width: 22.9%;
+    margin-right: 2.45%;
+    float: left;
+}
+.middle-4-article article:last-child{
+    margin-right: 0;
+}
+.middle-4-article article img{
+    margin: 0 auto; display: block; width: 155px;
+}
+.middle-4-material{
+    padding: 18px;
+}
+.middle-4-material h2{
+    font-size: 1.125em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+
+ }
+.middle-4-material h3{
+    font-size: 0.875em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+ }
+.middle-4-material p{
+    font-size: 0.9em;
+    margin-bottom: 30px;
+ }
+p.cost-order{
+    border-top: 1px solid #d3d3d2;
+    font-size: 0.875em;
+    color: #333333;
+    padding: 14px 0 0 0;
+    margin-top: 14px;
+}
+.cost{
+    float: left;
+}
+.order{
+    float: right;
+}
+/*     /ТОВАРЫ     */
+
+/*     ДОСТАВКА И ОПЛАТА     */
+.main-middle-5-all{
+	border-bottom: 2px solid #828282;
+	padding: 30px 0 20px 0;
+}
+.main-middle-5-all h3{
+	color: rgb(91, 0, 157); font-size: 3em; font-weight: 600; text-align: center;
+    text-shadow: 2px 2px 0px #111,
+				-2px -2px 0px #111,
+				-2px 2px 0px #111,
+				2px -2px 0px #111;
+}
+.main-middle-5-all hr{
+	width: 50%; height: 3px; margin: 10px auto;
+	border: 0; background: linear-gradient(to right, rgba(210,167,57,0)0%,rgba(210,167,57,0.7)50%,
+	rgba(210,167,57,0)100%);
+}
+.main-middle-5 article img{  /*верх*//*права*//*низ*//*лево*/
+	margin: 0 auto 18px auto; display: block; width: 35%
+}
+.main-middle-5 article a{
+	font-size: 1.125em; text-transform: uppercase;
+}
+.main-middle-5 article a:hover{
+	color: #fff; text-decoration: none;
+}
+.main-middle-5 article p{
+	text-align: center; font-size: 1.3em; line-height: 1.6; color: #111; font-weight: 700;
+}
+.main-middle-5 article p span{
+	text-align: center; font-size: 1.4em; color: red; text-shadow: 2px 1px 0px #111;
+}
+.golden-text{
+	color: #D2A739; font-size: 1.425em;
+}
+.main-middle-5 article{
+	width: 32.07%; float: left; margin-right: 1.895%; /*374px/1166px=32.07%*/
+}                                                     /*32.07*3=96.21%| (100-96.21%)/2=1.895*/
+.main-middle-5 article:last-child{
+	margin-right: 0;
+	}
+.main-middle-5 article h2{
+	font-size: 1.125em; margin-bottom: 10px; 
+	}
+.main-middle-5{
+	margin: 30px auto 30px auto;
+	}
+/*     /ДОСТАВКА И ОПЛАТА     */
+
+/*         VIDEO         */
+.video-asus{
+	background-color: #4d1e62; 
+    border-bottom: 2px solid #828282;
+	padding: 10px 0 40px 0;
+    
+}
+.video-center{
+	text-align: center; margin: 10px; 
+}
+.video-center h2{
+	color: #ffeb00; font-size: 3em; font-weight: 500; text-align: center; margin-bottom: 20px;
+    text-shadow: 3px 3px 0px #111,
+				-1px -1px 0px #111,
+				-1px 1px 0px #111,
+				1px -1px 0px #111;
+}
+.video1{
+    width: 45%; margin-right: 2%; border: 1px solid #111; box-shadow: 10px 10px 10px rgba(0,0,0,0.8);
+}
+.video2{
+    width: 45%; margin-right: -2%; border: 1px solid #111; box-shadow: 10px 10px 10px rgba(0,0,0,0.8);
+}
+.video1:hover{
+    width: 45%; margin-right: 2%; border: 2px solid #111; box-shadow: 0px 0px 10px;
+}
+.video2:hover{
+    width: 45%; margin-right: -2%; border: 2px solid #111; box-shadow: 0px 0px 10px;
+}
+
+/*         /VIDEO         */
+/*     О Компании     */
+.map0{
+	margin-bottom: 50px;
+}
+.map0 article{
+	float: left; width: 55%;
+}
+.map1{
+	float: right; width: 40%;
+}
+.map0 article h1{
+	font-size: 1.40625em; color: #333; margin-bottom: 25px;
+}
+.map0 article p{
+	font-size: 0.875em; color: #828282; margin-bottom: 20px;
+}
+.map-ifr{
+	position: relative; padding-bottom: 58%; height: 0; overflow: hidden;
+}
+.map-ifr iframe{
+	position: absolute; width: 100%; height: 100%; top: 0; left: 0;
+}
+/*     /О Компании     */
+/*     Нравится ли Вам ноутбук ?     */
+.drivers-100{
+	background: #4d1e62; color: #fff; padding: 28px 0; text-align: center;
+}
+.drivers-100 h3{
+	font-size: 3.375em; 
+}
+a.order-now{
+	color: #fff; border: 3px outset #fff ; padding: 18px;  border-radius: 5px; 
+	text-decoration: none; margin-top: 25px; display: inline-block; font-size: 1.25;
+	font-weight: 700;
+}
+a:visited.order-now{
+	color: #fff; border: 3px outset #fff; 
+}
+a:hover.order-now{
+	color: #00a8ff; border: 3px inset #00a8ff; 
+}
+a:active.order-now{
+	color: #fff; border: 3px inset #fff; 
+}
+/*     /Нравится ли Вам ноутбук ?    */
+/*     Контакты     */
+.contact-asus{
+	position: relative; height: 570px; width: 100%;
+}
+.contact-form{
+	position: absolute; bottom: 90px; width: 300px; left: 50%; 
+    background: url(images/form_bg.png); 
+	margin-left: -150px; border-radius: 20px; padding: 28px 28px 24px 28px; box-sizing: border-box;
+    text-shadow: 3px 3px 5px #111, -3px 3px 5px #111;
+				
+}
+.contact-form h2{
+	color: #fff; text-align: center; margin-bottom: 18px; font-size: 2.5em; font-weight: 500;
+}
+.foot-email{
+	width: 100%; font-size: 0.812em; padding: 6px 15px; margin-bottom: 14px; box-sizing: border-box; border-radius: 4px; color: #828282; text-align: center;
+}
+.foot-textarea{
+	width: 100%; font-size: 0.812em; padding: 6px 15px; margin-bottom: 14px; box-sizing: border-box;
+	border-radius: 4px; color: #828282; text-align: center; height: 130px; 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.foot-submit{
+	font-size: 1.3em; padding: 10px 30px; margin-bottom: 14px; color: #fff; text-shadow: 1px 1px 0px #111,
+				-1px -1px 0px #111,
+				-1px 1px 0px #111,
+				1px -1px 0px #111;
+	background: #333; cursor: pointer; border-radius: 8px; text-align: center; margin: 0 auto;
+	display: block; border: 3px outset #111;
+}
+.foot-submit:hover{
+    border: 3px inset #222;
+    background: #444;
+}
+.email{
+    position: relative;
+    color:#000;
+    bottom: 90px;
+    left: 50%;
+    margin-left: -180px;
+}
+/*     /Контакты     */
+/*     Footer     */
+.foot{
+	background: #1f1f1f; padding: 10px 0; text-align: center;
+}
+.foot .middle-4-article article{
+	border: none;
+}
+.foot p{
+	color: #fff; font-size: 1em; margin-bottom: 9px; float: left;
+}
+.foot h6 a{
+	color: #d3d3d2; text-decoration: none; font-size: 0.875em;
+}
+.foot p a:hover{
+	color: #00a8ff; text-decoration: underline;
+}
+.foot h3{
+	color: #d3d3d2; margin-top: 15px;
+}
+/*     /Footer     */
+
+.bounce{
+	animation-iteration-count: infinite;
+}
+
+/*    MEDIA    */
+
+@media screen and (max-width: 1430px){
+    .main-middle-3 article ul li{
+    font-size: 2em; 
+    margin-left: 5%;
+}
+}
+
+@media screen and (max-width: 1170px){
+    .main-middle-3 article ul li{
+    font-size: 2em; 
+    margin-left: 6%;
+}
+    .video1{
+        width: 80%; margin: 0 auto 10px auto; border: 1px solid #111; box-shadow: 10px 10px 10px rgba(0,0,0,0.8);
+    }
+    .video2{
+        width: 80%; margin: 0 auto; border: 1px solid #111; box-shadow: 10px 10px 10px rgba(0,0,0,0.8);
+    }
+    .video1:hover{
+        width: 45%; margin-right: 2%; border: 2px solid #111; box-shadow: 0px 0px 10px;
+    }
+    .video2:hover{
+        width: 45%; margin-right: -2%; border: 2px solid #111; box-shadow: 0px 0px 10px;
+    }
+}
+
+@media screen and (max-width: 970px) {
+        .slide-cover-1, .slide-cover-2, .slide-cover-3{
+        left: 10%; top: 20%;
+    }
+
+    .my-slider ul li p{
+        font-size: 50px; left: 100px; top: 250px; background:url(images/form_bg.png); 
+        margin-bottom: 25px; text-align: center; border: 4px solid #111;
+    }
+    .slide-cover-1 span, .slide-cover-2 span, .slide-cover-3 span{
+        color:#000000;font-size: 48px; margin-top: 5px; display: block; background-color: aliceblue;
+        border: 3px solid black; border-radius: 4px;
+    }
+    .download-top{
+        color:#ffffff;  border: 4px solid black; padding: 15px 35px; border-radius: 5px;
+        font-weight: 700; font-size: 20px; text-decoration: none; background: red;
+    }
+
+	.drivers-100 h3 {
+		float: none;
+		text-align: center;
+        font-size: 3em;
+	}
+
+	.drivers-form {
+		float: none;
+		margin: 16px auto 0 auto;
+		display: table;
+	}
+    .main-middle-3 article a{
+	font-size: 1em; text-transform: uppercase;
+    } .main-middle-5 article a{
+	font-size: 1em; text-transform: uppercase;
+    }
+    .middle-4-material h2{
+    font-size: 1em;
+
+    }
+    .middle-4-article article {
+		width: 45%;
+		margin: 0 2% 25px 2%;
+	}
+    .middle-4-article article img{
+        width: 40%
+    }
+    
+}
+
+@media screen and (max-width: 920px){
+    .main-middle-3 article ul li{
+    font-size: 2em; 
+    margin-left: 7%;
+    }
+    .menu li{
+	margin-right: 15px;
+    }
+    
+}
+
+@media screen and (max-width: 870px) {
+  .drivers-100 h3 {
+        font-size: 2.5em;
+	}
+
+	.drivers-form {
+		float: none;
+		margin: 16px auto 0 auto;
+		display: table;
+	} 
+    .menu li{
+	margin-right: 20px; font-size: 0.75em; font-weight: bold;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .menu li{
+	margin-right: 20px;
+    }
+    .slide-cover-1, .slide-cover-2, .slide-cover-3{
+        left: 10%; top: 20%;
+    }
+
+    .my-slider ul li p{
+        font-size: 40px; 
+        margin-bottom: 25px;
+        padding: 10px 0;
+    }
+    .slide-cover-1 span, .slide-cover-2 span, .slide-cover-3 span{
+       font-size: 38px; margin-top: 5px;
+    }
+    .download-top{
+        color:#ffffff;  border: 4px solid black; padding: 15px 35px; border-radius: 5px;
+        font-weight: 700; font-size: 20px; text-decoration: none; background: red;
+    }
+}
+
+@media screen and (max-width: 780px) {
+	.middle-4-article article {
+		width: 45%;
+		margin: 0 2% 25px 2%;
+	}
+
+	.middle-4-article article:last-child {
+		margin: 0 2% 25px 2%;
+	}
+    .asus-logo{
+	float: none; text-align: center; margin-top: -10px;
+}
+ .menu li{
+	margin-right: 20px; font-size: 0.8em; margin-top: -5px;
+    } 
+    .menu{
+	float: right; margin-top: 5px;
+}
+    .slide-cover-1, .slide-cover-2, .slide-cover-3{
+        left: 6%; top: 23%;
+    }
+    .main-middle-3 article ul li{
+    font-size: 1.7em; 
+    margin-left: 9%;
+    }
+    .main-middle-3 article img {
+		width: 100%;
+        float: none;
+        margin: 0 auto;
+	}
+}
+
+@media screen and (max-width: 730px) {
+	.main-middle-3 article {
+		width: 95%;
+		float: none;
+		margin: 0 2.5% 25px 2.5%;
+		/*374px/1166px=32.07%*/
+	}
+
+	/*32.07*3=96.21%| (100-96.21%)/2=1.895*/
+	.main-middle-3 article:last-child {
+		margin: 0 2.5% 25px 2.5%;
+	}
+
+	.main-middle-3 article h2 {
+		text-align: center;
+	}
+
+	.main-middle-3 article p {
+		text-align: center;
+	}
+
+	.main-middle-3 article img {
+		width: 60%;
+	}	.main-middle-5 article {
+		width: 95%;
+		float: none;
+		margin: 0 2.5% 25px 2.5%;
+		/*374px/1166px=32.07%*/
+	}
+
+	/*32.07*3=96.21%| (100-96.21%)/2=1.895*/
+	.main-middle-5 article:last-child {
+		margin: 0 2.5% 25px 2.5%;
+	}
+
+	.main-middle-5 article h2 {
+		text-align: center;
+	}
+
+	.main-middle-5 article p {
+		text-align: center;
+	}
+
+	.main-middle-5 article img {
+		width: 25%;
+	}
+    .drivers-100 h3{
+	font-size: 2em; 
+    }
+    .slide-cover-1, .slide-cover-2, .slide-cover-3{
+        left: 10%; top: 24%;
+    }
+
+    .my-slider ul li p{
+        font-size: 30px; 
+        margin-bottom: 25px;
+        padding: 15px 0;
+    }
+    .slide-cover-1 span, .slide-cover-2 span, .slide-cover-3 span{
+       font-size: 28px; padding-bottom: 3px;
+    }
+    .download-top{
+        padding: 15px 25px;
+    }
+    .menu li{
+	margin-right: 18px; font-size: 0.75em; margin-top: -5px;
+    } 
+}
+
+@media screen and (max-width: 685px) {
+	.slide-cover-1, .slide-cover-2, .slide-cover-3{
+        left: 10%; top: 27%;
+    }
+    .my-slider ul li p{
+        font-size: 25px; 
+        margin-bottom: 25px;
+        padding: 10px 0;
+    }
+    .slide-cover-1 span, .slide-cover-2 span, .slide-cover-3 span{
+       font-size: 20px;
+    }
+    .download-top{
+        padding: 10px 18px; border-radius: 5px;
+        font-weight: 700; font-size: 20px;
+    }
+    .menu li{ 
+        font-size: 0.7em; font-weight: 900; margin-right: 13px;
+    }
+    
+    
+}
+
+@media screen and (max-width: 600px) {
+	.head-0 {
+		position: relative;
+	}
+      .menu li{
+	font-size: 0.7em; font-weight: 900; margin-right: 15px;
+    line-height: 2;
+    }
+    .drivers-100 h3{
+	font-size: 1.8em; 
+    }
+    .slide-cover-1, .slide-cover-2, .slide-cover-3{
+        left: 10%; top: 10%;
+    }
+    .my-slider ul li p{
+        font-size: 25px; 
+        margin-bottom: 25px;
+        padding: 10px 0;
+    }
+    .slide-cover-1 span, .slide-cover-2 span, .slide-cover-3 span{
+       font-size: 20px;
+    }
+    .download-top{
+        padding: 10px 18px; border-radius: 5px;
+        font-weight: 700; font-size: 20px;
+    }
+    .main-middle-4-section h3{
+        font-size: 2.5em;
+    }
+}
+
+@media screen and (max-width: 505px){
+    .drivers-100 h3{
+	font-size: 1.5em; 
+    }
+    .slide-cover-1, .slide-cover-2, .slide-cover-3{
+        left: 10%; top: 3%;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .drivers-100 h3{
+	font-size: 1.4em; 
+    }
+    .slide-cover-1, .slide-cover-2, .slide-cover-3{
+        left: 5%; top: 2%;
+    }
+    .my-slider ul li p{
+        font-size: 20px; 
+        margin-bottom: 15px;
+        padding: 10px 0;
+    }
+    .slide-cover-1 span, .slide-cover-2 span, .slide-cover-3 span{
+       font-size: 18px;
+    }
+    .download-top{
+        padding: 10px 18px;
+        font-weight: bold; font-size: 15px;
+    }
+    .main-middle-3 article ul li{
+    font-size: 1.3em; 
+    margin-left: 13%;
+    }
+    .middle-4-article article {
+		width: 95%;
+		float: none;
+		margin: 0 2% 5px 2%;
+        text-align: center;
+	}
+
+	.middle-4-article article:last-child {
+		width: 95%;
+		float: none;
+		margin: 0 2% 5px 2%;
+        text-align: center;
+	}
+    .middle-4-material p{
+        font-size: 0.9em;
+    }
+
+@media screen and (max-width: 400px) {
+	.menu li {
+		float: center;
+		margin-right: 13px;
+	}
+}
+
+@media screen and (max-width: 390px) {
+
+	
+    .video1{
+        width: 100%;
+    }
+    .video2{
+        width: 100%;
+    }
+    .video1:hover{
+        width: 100%;
+    }
+    .video2:hover{
+        width: 100%;
+    }
+    .main-middle-3 article ul li{
+    font-size: 1.3em; 
+    margin-left: 16%;
+    }
+    
+    
+    .main-middle-3-all h3, .main-middle-5-all h3{
+	font-size: 2.5em;
+    } 
+    .main-middle-4-section h3{
+        font-size: 2.1em;
+    }
+}
+
+@media screen and (max-width: 376px) {
+	.menu li {
+		float: center;
+		margin-right: 9px;
+		margin-left: 5px; font-size: 0.6em;
+	}
+    .main-middle-3-all h3{
+	font-size: 2.3em;
+    }
+    .slide-cover-1, .slide-cover-2, .slide-cover-3{
+        left: 5%; top: 2%;
+    }
+    .my-slider ul li p{
+        font-size: 15px; 
+        margin-bottom: 15px;
+        padding: 10px 0;
+    }
+    .slide-cover-1 span, .slide-cover-2 span, .slide-cover-3 span{
+       font-size: 15px;
+    }
+    .download-top{
+        padding: 10px 5px;
+        font-weight: bold; font-size: 13px;
+    }
+}
+}
+
+@media screen and (max-width: 320px) {
+    .my-slider ul li p{
+        font-size: 15px; 
+        margin-bottom: 12px;
+        padding: 7px 0;
+    }
+    .download-top{
+        padding: 7px 5px;
+        font-weight: bold; font-size: 10px;
+    }
+	.video1{
+        box-shadow: none;
+    }
+    .video2{
+        box-shadow: none;
+    }
+    .video1:hover{
+        box-shadow: none;
+    }
+    .video2:hover{
+        box-shadow: none;
+    }
+}
